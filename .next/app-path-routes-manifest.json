@@ -1,0 +1,8 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/snippets/[id]/edit/page": "/snippets/[id]/edit",
+  "/snippets/new/page": "/snippets/new",
+  "/snippets/[id]/page": "/snippets/[id]"
+}
