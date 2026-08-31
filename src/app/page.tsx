@@ -15,7 +15,6 @@ export default async function Home() {
   })
    return (
     <div>
-      
       <div className="flex gap-2 flex-col">{renderedSnippets}</div>
     </div>
   );
