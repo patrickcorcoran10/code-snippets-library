@@ -15,10 +15,7 @@ export default async function Home() {
   })
    return (
     <div>
-      <div className='flex m-2 justify-between items-center'>
-        <h1 className="text-xl font-bold">Snippets</h1>
-        <Link className="border p-2 rounded" href="/snippets/new">Add Snippet</Link>
-      </div>
+      
       <div className="flex gap-2 flex-col">{renderedSnippets}</div>
     </div>
   );
