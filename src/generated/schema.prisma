@@ -25,11 +25,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
-
 model Snippet {
-  id Int @id @default(autoincrement())
+  id    Int    @id @default(autoincrement())
   title String
-  code String
+  code  String
 }
