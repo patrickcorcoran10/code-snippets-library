@@ -20,6 +20,6 @@ import { defineConfig, env } from "prisma/config";
 export default defineConfig({
   schema: "prisma/schema.prisma",
   datasource: {
-    url: env("POSTGRES_URL_NON_POOLING"), // direct connection for Prisma CLI
+    url: env("DATABASE_URL"), // direct connection for Prisma CLI
   },
 });
