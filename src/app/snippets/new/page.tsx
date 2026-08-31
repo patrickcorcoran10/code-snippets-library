@@ -1,12 +1,14 @@
 'use client'
 
-import { useActionState, startTransition } from 'react'
+import { useActionState, startTransition, useState } from 'react'
 import { createSnippet } from '@/actions';
- 
+// import SnippetNewForm from '@/components/SnippetNewForm';
+import Editor from "@monaco-editor/react";
 
 export default function SnippetCreatePage() {
 
   const [formState, action] = useActionState(createSnippet, {message: ''});
+  const [codeValue, setCodeValue] = useState('// some code')
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,13 +28,23 @@ export default function SnippetCreatePage() {
       </div>
       <div className="flex gap-4">
         <label className="w-12" htmlFor="code">Code</label>
-        <textarea name="code" className="border rounded p-2 w-full" id="code"></textarea>
+        {/* <textarea name="code" className="border rounded p-2 w-full" id="code"></textarea> */}
+        {/* <SnippetNewForm/> */}
+        <Editor
+          height="40vh"
+          theme="vs-dark"
+          language="javascript"
+          defaultValue="// some code"
+          options={{minimap:{ enabled: false  }}}
+          onChange={(value) => setCodeValue(value || {codeValue})}
+        />
+        <textarea name='code' value={codeValue} readOnly style={{display:"none"}}/>
       </div>
-      {formState.message ? (
+      {/* {formState.message ? (
           <div className="my-2 p-2 bg-red-200 border rounded border-red-400">
             {formState.message}
           </div>
-        ) : null}
+        ) : null} */}
       <button type="submit" className="rounded p-2 bg-blue-200">Create</button>
     </div>
   </form>
