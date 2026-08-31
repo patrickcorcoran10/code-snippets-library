@@ -34,7 +34,7 @@ export default function SnippetCreatePage() {
           language="javascript"
           defaultValue="// some code"
           options={{minimap:{ enabled: false  }}}
-          onChange={(value) => setCodeValue(value || {codeValue})}
+          onChange={(value) => setCodeValue(value || "")}
         />
         <textarea name='code' value={codeValue} readOnly style={{display:"none"}}/>
       </div>
