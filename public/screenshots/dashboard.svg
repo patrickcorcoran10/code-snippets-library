@@ -1,0 +1,35 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F8FAFC"/>
+  <rect x="0" y="0" width="1400" height="92" fill="#111827"/>
+  <circle cx="66" cy="46" r="20" fill="#60A5FA"/>
+  <text x="106" y="55" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="700">Snippets</text>
+  <rect x="1180" y="24" width="154" height="44" rx="12" fill="#2563EB"/>
+  <text x="1234" y="53" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="600">+ New</text>
+
+  <rect x="120" y="150" width="1160" height="680" rx="22" fill="white" stroke="#E5E7EB"/>
+  <text x="170" y="210" fill="#111827" font-family="Arial, sans-serif" font-size="34" font-weight="700">Code Snippets Library</text>
+
+  <rect x="170" y="245" width="1080" height="92" rx="18" fill="#F3F4F6"/>
+  <text x="200" y="286" fill="#111827" font-family="Arial, sans-serif" font-size="30" font-weight="600">useFetch with caching</text>
+  <text x="200" y="318" fill="#6B7280" font-family="Arial, sans-serif" font-size="20">View</text>
+  <rect x="1080" y="280" width="120" height="34" rx="10" fill="#DBEAFE"/>
+  <text x="1115" y="302" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Open</text>
+
+  <rect x="170" y="365" width="1080" height="92" rx="18" fill="#F9FAFB"/>
+  <text x="200" y="406" fill="#111827" font-family="Arial, sans-serif" font-size="30" font-weight="600">Prisma query helpers</text>
+  <text x="200" y="438" fill="#6B7280" font-family="Arial, sans-serif" font-size="20">View</text>
+  <rect x="1080" y="400" width="120" height="34" rx="10" fill="#DBEAFE"/>
+  <text x="1115" y="422" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Open</text>
+
+  <rect x="170" y="485" width="1080" height="92" rx="18" fill="#F3F4F6"/>
+  <text x="200" y="526" fill="#111827" font-family="Arial, sans-serif" font-size="30" font-weight="600">Next.js server action example</text>
+  <text x="200" y="558" fill="#6B7280" font-family="Arial, sans-serif" font-size="20">View</text>
+  <rect x="1080" y="520" width="120" height="34" rx="10" fill="#DBEAFE"/>
+  <text x="1115" y="542" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Open</text>
+
+  <rect x="170" y="605" width="1080" height="92" rx="18" fill="#F9FAFB"/>
+  <text x="200" y="646" fill="#111827" font-family="Arial, sans-serif" font-size="30" font-weight="600">Monaco editor setup</text>
+  <text x="200" y="678" fill="#6B7280" font-family="Arial, sans-serif" font-size="20">View</text>
+  <rect x="1080" y="640" width="120" height="34" rx="10" fill="#DBEAFE"/>
+  <text x="1115" y="662" fill="#1D4ED8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Open</text>
+</svg>
