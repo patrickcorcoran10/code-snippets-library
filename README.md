@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code Snippets Library
+
+A lightweight full-stack app for storing, viewing, editing, and managing reusable code snippets. Built with Next.js and Prisma, the app offers a simple dashboard for browsing saved snippets, a dedicated viewing page for each snippet, and a Monaco-powered editor for updating code.
+
+## Features
+
+- Create new code snippets with a title and source code
+- Browse saved snippets from a central library view
+- Open any snippet to review its full content
+- Edit snippets with a browser-based code editor
+- Delete snippets from the UI
+- Persistent storage using Prisma ORM with PostgreSQL
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- PostgreSQL
+- Neon Serverless Database
+- Monaco Editor via `@monaco-editor/react`
+- ESLint
+- dotenv / dotenv-cli
+
+## Libraries and Dependencies
+
+- `next` — App framework and routing
+- `react` / `react-dom` — UI rendering
+- `@prisma/client` — Prisma database client
+- `prisma` — Schema generation and migrations
+- `@monaco-editor/react` — In-browser code editor
+- `@neondatabase/serverless` — Serverless Postgres connection support
+- `tailwindcss` — Utility-first styling
+- `dotenv` / `dotenv-cli` — Environment variable management
+- `eslint` / `eslint-config-next` — Code quality and linting
+
+## Project Structure
+
+```text
+.
+├── prisma/
+│   └── schema.prisma
+├── public/
+│   ├── screenshots/
+│   │   ├── dashboard.svg
+│   │   └── editor.svg
+│   └── ...
+├── src/
+│   ├── actions/
+│   ├── app/
+│   ├── components/
+│   └── db/
+├── .env.local
+├── next.config.ts
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
+```
+
+## Screenshots
+
+![Dashboard preview](public/screenshots/dashboard.svg)
+
+![Snippet editor preview](public/screenshots/editor.svg)
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Set up your environment variables in `.env.local`:
+
+```bash
+DATABASE_URL="postgresql://user:password@localhost:5432/snippets"
+```
+
+3. Run the database locally if needed:
+
+```bash
+npm run start:db
+```
+
+4. Generate Prisma client and run migrations:
+
+```bash
+npm run prisma:generate:local
+npm run prisma:migrate:local
+```
+
+5. Start the app:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is a simple snippet manager designed for quick code storage and reuse. It is ideal for developers who want a lightweight, local-first library for snippets without the overhead of a larger knowledge base or documentation platform.
