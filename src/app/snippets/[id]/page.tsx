@@ -2,6 +2,7 @@ import {db} from '@/db';
 import {notFound} from 'next/navigation'
 import Link from "next/link"
 import { deleteSnippet } from '@/actions';
+import SnippetShowForm from '@/components/SnippetShowForm';
 
 interface SnippetShowPageProps {
     params: Promise<{
@@ -34,7 +35,9 @@ export default async function SippetShowPage(props: SnippetShowPageProps) {
             </div>
         </div>
         <pre className='p-3 border rounded bg-gray-200 border-gray-200'>
-            <code>{snippet.code}</code>
+            <SnippetShowForm
+                snippet={snippet}
+            />
         </pre>
     </div>
     )
