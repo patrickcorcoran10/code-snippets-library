@@ -31,6 +31,7 @@ export async function createSnippet(formState:{message:string}, formData: FormDa
     // Check if input is valid
     const title = formData.get('title');
     const code = formData.get('code');
+    const language = formData.get('language')
 
     if (typeof title !== "string" || title.length< 3) {
         return {
@@ -42,12 +43,18 @@ export async function createSnippet(formState:{message:string}, formData: FormDa
             message: "Code Snippet must be longer"
         }
     }
+    if (typeof language !== "string" || language.length === 0) {
+        return {
+            message: "Please select a language"
+        }
+    }
 
     // take input and create a record in the db
 
    await db.snippet.create({
       data: {
         title,
+        language,
         code
       }
     })

@@ -3,11 +3,28 @@
 import { useActionState, startTransition, useState } from 'react'
 import { createSnippet } from '@/actions';
 import Editor from "@monaco-editor/react";
+import LanguageDropdown from '@/components/LanguageDropdown';
+
+const monacoLanguageIds: Record<string, string> = {
+  HTML: 'html',
+  JavaScript: 'javascript',
+  CSS: 'css',
+  JSON: 'json',
+  SCSS: 'scss',
+  Markdown: 'markdown',
+};
 
 export default function SnippetCreatePage() {
 
   const [formState, action] = useActionState(createSnippet, {message: ''});
   const [codeValue, setCodeValue] = useState('// some code')
+  const [languageData, setLanguageData] = useState<string>('');
+
+  const handleLanguageStateChange = (data: string) => {
+    setLanguageData(data);
+  };
+
+  const editorLanguage = monacoLanguageIds[languageData] ?? 'plaintext';
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -22,16 +39,23 @@ export default function SnippetCreatePage() {
     <h3 className="font-bold m-3">Create a Snippet</h3>
     <div className="flex flex-col gap-4">
       <div className="flex gap-4">
-        <label className="w-12" htmlFor="title">Title</label>
+        <label className="w-12 mr-5" htmlFor="title">Title</label>
         <input name="title" className="border rounded p-2 w-full" id="name"></input>
       </div>
+      <div className='flex gap-4'>
+        <label className="w-12 mr-5" htmlFor="language">Language</label>
+        <LanguageDropdown
+          onLanguageChange={handleLanguageStateChange}
+        />
+        <input readOnly style={{display:"none"}} name="language" value={languageData} />
+      </div>
       <div className="flex gap-4">
-        <label className="w-12" htmlFor="code">Code</label>
+        <label className="w-12 mr-5" htmlFor="code">Code</label>
       
         <Editor
           height="40vh"
           theme="vs-dark"
-          language="javascript"
+          language={editorLanguage}
           defaultValue="// some code"
           options={{minimap:{ enabled: false  }}}
           onChange={(value) => setCodeValue(value || "")}

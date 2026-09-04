@@ -25,13 +25,13 @@ export default function SnippetEditForm({snippet}: SnippetEditFormProps) {
             <Editor 
                 height="40vh"
                 theme="vs-dark"
-                language="javascript"
+                language={snippet.language}
                 defaultValue={snippet.code}
                 options={{minimap:{ enabled: false  }}}
                 onChange={handleEditorChange}
             />
             <form action={editSnippetAction}>
-                <button type="submit" className="p-2 border rounded">
+                <button type="submit" className="p-2 mt-5 border rounded">
                     Save
                 </button>
             </form>
