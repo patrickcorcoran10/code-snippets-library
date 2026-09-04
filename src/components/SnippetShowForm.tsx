@@ -12,7 +12,7 @@ export default function SnippetShowForm({snippet}:SnippetShowFormProps ) {
         <Editor
             height="40vh"
             theme="vs-dark"
-            language="javascript"
+            language={snippet.language}
             defaultValue={snippet.code}
             options={{ minimap: { enabled: false }, readOnly: true }}
         />
